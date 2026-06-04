@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <app-todo-form
+            (EmitUpdate)="onUpdate($event)"
+            [editObj]="editObj"
+            (EmitAdd)="onAddTodo($event)"
+            >
+            </app-todo-form>
+        </div>
+        <div class="col-md-6">
+            <app-todo-list
+            (EmitObj)="onEdit($event)"
+            (EmitRemove)="onRemove($event)"
+            [todoArr]="todoArr"
+            ></app-todo-list>
+        </div>
+    </div>
+</div>

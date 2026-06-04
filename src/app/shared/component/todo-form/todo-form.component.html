@@ -1,0 +1,32 @@
+<form #todoForm="ngForm" (ngSubmit)="onAddTodo()">
+    <div class="form-group">
+        <label for="todoItem">todoItem</label>
+        <input 
+        required
+        ngModel
+        #todoItem="ngModel"
+        name="todoItem"
+        type="text" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label for="isActive">isActive</label>
+        <select 
+        required
+        ngModel
+        #isActive="ngModel"
+        name="isActive"
+        type="text" class="form-control">
+          <option value="true">Yes</option>
+          <option value="false">No</option>
+        </select>
+    </div>
+
+    <button 
+    *ngIf="!IsInEditMode"
+    mat-raised-button color="primary">Add button</button>
+    <button
+    *ngIf="IsInEditMode"
+    (click)="onUpdate()"
+     mat-raised-button color="primary">Update button</button>
+</form>

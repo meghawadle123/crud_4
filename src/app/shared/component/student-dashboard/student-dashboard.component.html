@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+          <app-student-form
+          (EmitUpdate)="onUpdate($event)"
+          [editObj]="editObj"
+          (EmitAdd)="onAddstd($event)"
+          ></app-student-form>
+        </div>
+        <div class="col-md-8">
+          <app-student-table
+          (EmitEdit)="onEdit($event)"
+          (emitRemove)="onRemove($event)"
+          [stdArr]="stdArr"
+          ></app-student-table>
+        </div>
+    </div>
+</div>

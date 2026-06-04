@@ -1,0 +1,39 @@
+<table class="table table-bordered" *ngIf="stdArr.length>0;else Nostd">
+    <thead>
+        <tr>
+            <th>Sr.number</th>
+            <th>Full name</th>
+            <th>Email</th>
+            <th>Contact</th>
+            <th>edit</th>
+            <th>Remove</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let std of stdArr;let i=index;trackBy:trackbyFun">
+            <td>{{i+1}}</td>
+            <td>{{std.fname}} {{std.lname}}</td>
+            <td>{{std.email}}</td>
+            <td>{{std.contact}}</td>
+            <td>
+                <button 
+                (click)="OnEdit(std)"
+                mat-mini-fab color="primary">
+                    <mat-icon>edit</mat-icon>
+                </button>
+            </td>
+            <td>
+                <button 
+                (click)="onRemove(std.stdid)"
+                mat-mini-fab color="warn">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </td>
+            
+        </tr>
+    </tbody>
+</table>
+
+<ng-template #Nostd>
+    <p>No data Availbale</p>
+</ng-template>
