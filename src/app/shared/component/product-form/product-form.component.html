@@ -1,0 +1,51 @@
+<form #prodForm="ngForm" (ngSubmit)="OnprodAdd()">
+    <div class="form-group">
+        <label for="productName">productName*</label>
+        <input 
+        required
+        name="productName"
+        ngModel
+        #productName="ngModel"
+        type="text" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label for="brand">brand*</label>
+        <input 
+        required
+        name="brand"
+        ngModel
+        #brand="ngModel"
+        type="text" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label for="price">price*</label>
+        <input 
+        required
+        name="price"
+        ngModel
+        #price="ngModel"
+        type="text" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label for="imageUrl">imageUrl</label>
+        <input 
+        required
+        name="imageUrl"
+        ngModel
+        #imageUrl="ngModel"
+        type="text" class="form-control">
+    </div>
+
+    <button 
+    *ngIf="!IsinEditMode"
+    [disabled]="prodForm.invalid"
+    mat-raised-button color="primary">Add button</button>
+
+    <button 
+    *ngIf="IsinEditMode"
+    (click)="onUpdateProduct()"
+    mat-raised-button color="primary" type="button">update button</button>
+</form>

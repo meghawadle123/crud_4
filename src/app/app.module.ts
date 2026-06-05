@@ -19,6 +19,9 @@ import { GetconfirmComponent } from './shared/component/getconfirm/getconfirm.co
 import { PostDashboardComponent } from './shared/component/post-dashboard/post-dashboard.component';
 import { PostCardComponent } from './shared/component/post-card/post-card.component';
 import { PostFormComponent } from './shared/component/post-form/post-form.component';
+import { ProductDashboardComponent } from './shared/component/product-dashboard/product-dashboard.component';
+import { ProductPostComponent } from './shared/component/product-post/product-post.component';
+import { ProductFormComponent } from './shared/component/product-form/product-form.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +34,10 @@ import { PostFormComponent } from './shared/component/post-form/post-form.compon
     GetconfirmComponent,
     PostDashboardComponent,
     PostCardComponent,
-    PostFormComponent
+    PostFormComponent,
+    ProductDashboardComponent,
+    ProductPostComponent,
+    ProductFormComponent
   ],
   imports: [
     BrowserModule,
