@@ -1,1 +1,30 @@
-<p>post-form works!</p>
+<form #postForm="ngForm" (ngSubmit)="onpostAdd()">
+    <div class="form-group">
+        <label for="title">title</label>
+        <input 
+        required
+        ngModel
+        #title="ngModel"
+        name="title"
+        type="text" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label for="body">body</label>
+        <input 
+        required
+        ngModel
+        #body="ngModel"
+        name="body"
+        type="text" class="form-control">
+    </div>
+
+    <button 
+    *ngIf="!IsInEditmode"
+    [disabled]="postForm.invalid"
+    mat-raised-button color="primary">Add button</button>
+    <button
+    *ngIf="IsInEditmode"
+    (click)="onUpdate()"
+     mat-raised-button color="primary" type="button">Update button</button>
+</form>

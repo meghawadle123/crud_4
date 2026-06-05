@@ -42,6 +42,7 @@
 
     <button
     *ngIf="!IsInEditMode"
+    [disabled]="stdForm.invalid"
      mat-raised-button color="primary">Add button</button>
     <button 
     *ngIf="IsInEditMode"

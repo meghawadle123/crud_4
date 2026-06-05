@@ -24,6 +24,7 @@
 
     <button 
     *ngIf="!IsInEditMode"
+    [disabled]="todoForm.invalid"
     mat-raised-button color="primary">Add button</button>
     <button
     *ngIf="IsInEditMode"
